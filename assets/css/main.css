@@ -6907,15 +6907,18 @@ span {
   height: 100svh;
 }
 
-@media (max-width: 1399px) {
-  .hero-1 {
-    padding: 100px 0;
-  }
-}
 @media (max-width: 991px) {
-  .hero-1 {
-    padding: 80px 0;
-  }
+    .hero-1 {
+        height: 90svh;
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .hero-1 {
+        height: 80svh;
+        min-height: 500px; /* Prevents it from becoming too short */
+    }
 }
 .hero-1::before {
   position: absolute;
@@ -6976,7 +6979,30 @@ span {
   .hero-1 .hero-content {
     text-align: center;
   }
+
+   .hero-1 .hero-content h1 {
+        font-size: 2rem;        /* About 32px */
+        line-height: 1.25;
+        margin-bottom: 18px;
+    }
+
+    .hero-1 .hero-content p {
+        font-size: 1rem;        /* 16px */
+        line-height: 1.7;
+        max-width: 100%;
+    }
+
+    .hero-1 .hero-content h6 {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
+    .hero-1 .hero-content .hero-button {
+        margin-top: 24px;
+    }
 }
+
 .hero-1 .hero-content h6 {
   color: var(--theme);
   margin-bottom: 20px;
@@ -9172,8 +9198,24 @@ span {
   overflow: hidden;
   border-radius: 20px;
   height: 500px;
-  aspect-ratio: 3/2;
+ 
+  max-width:800px;
 }
+
+@media (max-width: 991px) {
+    .project-card-item .project-image {
+        height: 380px;
+    }
+}
+
+@media (max-width: 767px) {
+    .project-card-item .project-image {
+        width: 100%;      /* keep the full width */
+        height: 300px;    /* only reduce the height */
+    }
+}
+
+
 .project-card-item .project-image img {
   width: 100%;
   height: 100%;
@@ -9187,7 +9229,7 @@ span {
   align-items: center;
   gap: 60px;
   position: absolute;
-  left: 40px;
+  left: 20px;
   bottom: -40px;
   opacity: 0;
   visibility: hidden;
@@ -9200,12 +9242,33 @@ span {
   text-align: left;
 }
 .project-card-item .project-image .project-content .content h3 {
-  font-size: 36px;
+  font-size: 26px;
 }
-@media (max-width: 1199px) {
-  .project-card-item .project-image .project-content .content h3 {
-    font-size: 25px;
-  }
+@media (max-width: 767px) {
+
+    .project-card-item .project-image .project-content {
+        left: 20px;
+        
+        gap: 15px;
+    }
+
+    .project-card-item .project-image .project-content .content h3 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin-bottom: 5px;
+    }
+
+    .project-card-item .project-image .project-content .content h5,
+    .project-card-item .project-image .project-content .content span {
+        font-size: 14px;
+    }
+
+    .project-card-item .project-image .project-content .icon {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+    }
 }
 .project-card-item .project-image .project-content .content h3 a {
   background-position: 0 95%;
